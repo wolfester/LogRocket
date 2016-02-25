@@ -16,19 +16,29 @@ logrocket /path/to/config/directory
 
 ##Config file format
 Config files are simple json objects.  Config files can take any name other than "readme.txt".  
-Config properties are:
+Capitalization of properties in the config files must be as shown.
+
+###Config properties are:
 
 Path (string, required):  																		The wildcard (*) capable path for logfiles you wish to forward 
+
 Topic (string, required): 																		The Kafka topic that log messages will be sent to
+
 Multiline (bool, optional default false): 														Flag to indicate whether log messages are multiline
+
 FirstLineRegex (string, required when Multiline is true): 										The regex pattern that the first line of a log message will be.  This must meet the Go regex specification.
+
 ReplaceNewline (bool, optional default false): 													Flag to indicate whether newline characters should be replaced
+
 NewlineReplacement (string, required if ReplaceNewline is true): 								The string to replace newline characters with
+
 FromBeginning (bool, optional default false): 													Flag to indicate whether historic log messages should be harvested or only new ones
+
 PrependHostname (bool, optional default false): 												Flag to indicate whether log messages should have the current machines hostname prepended to it
+
 HostnameOverride (string, optional default null, only applicable if PrependHostname is true): 	String to override the hostname of the current machine
 
-Capitalization of properties in the config files must be as shown.
+
 
 ## License
 
